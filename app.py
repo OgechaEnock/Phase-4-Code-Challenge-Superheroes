@@ -21,13 +21,13 @@ mail = Mail(app)
 def home():
     return jsonify({"message": "Welcome to Superheroes API"}), 200
 
-# GET /heroes - Get all heroes
+# Get all heroes
 @app.route('/heroes', methods=['GET'])
 def get_heroes():
     heroes = Hero.query.all()
     return jsonify([hero.to_dict(only=('id', 'name', 'super_name')) for hero in heroes]), 200
 
-# GET /heroes/:id - Get a specific hero
+# Get a specific hero
 @app.route('/heroes/<int:id>', methods=['GET'])
 def get_hero(id):
     hero = Hero.query.get(id)
@@ -35,7 +35,7 @@ def get_hero(id):
     if not hero:
         return jsonify({"error": "Hero not found"}), 404
     
-    # Serialize with nested hero_powers and power data
+    # Serialize 
     hero_dict = hero.to_dict(only=(
         'id', 
         'name', 
@@ -51,13 +51,13 @@ def get_hero(id):
     
     return jsonify(hero_dict), 200
 
-# GET /powers - Get all powers
+# Get all powers
 @app.route('/powers', methods=['GET'])
 def get_powers():
     powers = Power.query.all()
     return jsonify([power.to_dict(only=('id', 'name', 'description')) for power in powers]), 200
 
-# GET /powers/:id - Get a specific power
+#  Get a specific power
 @app.route('/powers/<int:id>', methods=['GET'])
 def get_power(id):
     power = Power.query.get(id)
@@ -67,7 +67,7 @@ def get_power(id):
     
     return jsonify(power.to_dict(only=('id', 'name', 'description'))), 200
 
-# PATCH /powers/:id - Update a power's description
+# Update a power's description
 @app.route('/powers/<int:id>', methods=['PATCH'])
 def update_power(id):
     power = Power.query.get(id)
@@ -89,7 +89,7 @@ def update_power(id):
         db.session.rollback()
         return jsonify({"errors": [str(e)]}), 400
 
-# POST /hero_powers - Create a new HeroPower
+# Create a new HeroPower
 @app.route('/hero_powers', methods=['POST'])
 def create_hero_power():
     data = request.get_json()
@@ -135,7 +135,7 @@ def create_hero_power():
         db.session.rollback()
         return jsonify({"errors": [str(e)]}), 400
 
-# Email route (Flask-Mail implementation)
+# Email route 
 @app.route('/send-email', methods=['POST'])
 def send_email():
     try:
