@@ -70,9 +70,9 @@ API running at `http://localhost:5555`
 ## Project Demonstration
 
 ### 1. GET /heroes - Retrieve All Heroes
-![GET Heroes](get-heroes.png)
+![GET Heroes](screenshots/get-heroes.png)
 *Successfully retrieves all heroes with 200 OK status*
 
 ### 2. POST /send-email - Email Functionality
-![Send Email](send-email.png)
+![Send Email](screenshots/send-email.png)
 *Demonstrates Flask-Mail sending email successfully*
