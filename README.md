@@ -21,7 +21,7 @@ This API manages superheroes, their powers, and relationships between them. Buil
 ## Installation & Setup
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/superheroes-api.git
+git clone (paste repository url)
 
 
 # Create virtual environment
@@ -32,7 +32,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 
 # Set up email
-export MAIL_USERNAME="your-email@gmail.com"
+export MAIL_USERNAME="enockogecha7@@gmail.com"
 export MAIL_PASSWORD="your-app-password"
 
 # Initialize database
@@ -45,7 +45,7 @@ python seed.py
 python app.py
 ```
 
-API runs at `http://localhost:5555`
+API running at `http://localhost:5555`
 
 ## API Endpoints
 
