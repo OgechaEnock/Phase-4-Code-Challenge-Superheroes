@@ -74,5 +74,5 @@ API running at `http://localhost:5555`
 *Successfully retrieves all heroes with 200 OK status*
 
 ### 2. POST /send-email - Email Functionality
-![Send Email](image-1.png)
+![Send Email](/home/enny/Development/code/phase4/Phase-4-Code-Challenge-Superheroes/screenshots/send-email.png)
 *Demonstrates Flask-Mail sending email successfully*
